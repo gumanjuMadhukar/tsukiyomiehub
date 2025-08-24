@@ -6,7 +6,7 @@
 @section('content')
 
 <!-- Banner Starts Here -->
-<section class="main-banner" style="background-image: url({{asset('public/frontend/dist/images/banner/banner.jpg')}});">
+{{-- <section class="main-banner" style="background-image: url({{asset('public/frontend/dist/images/banner/banner.jpg')}});">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 mb-lg-0 order-2 order-lg-0 d-flex align-items-center">
@@ -15,7 +15,7 @@
                     <p>
                        Our commitment is to guide you to the finest online courses, offering expert insights whenever and wherever you are.
                     </p>
-                    {{-- <form>
+                    <form>
                         <div class="banner-input">
                             <div class="main-input">
                                 <input type="text" placeholder="what do you want to learn today..." />
@@ -30,7 +30,7 @@
                                 <button class="button button-lg button--primary">Search</button>
                             </div>
                         </div>
-                    </form> --}}
+                    </form>
                 </div>
             </div>
             <div class="col-lg-5 order-1 order-lg-0">
@@ -39,6 +39,32 @@
                         class="img-fluid" width="515" height="700"/>
                 </div>
             </div>
+        </div>
+    </div>
+</section> --}}
+
+<section class="main-banner" style="position:relative;height:100vh; background-image: url('{{ $bannerDetails ? asset('public/uploads/banners/' . @$bannerDetails->image) : asset('path/to/default/banner.jpg') }}');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mb-lg-0 order-2 order-lg-0 d-flex align-items-center" style="position: absolute;border-radius:8px;background: #0000008f;z-index: 2;bottom:10%;left:10%">
+                <div class="banner-two-start">
+                    <h1 class="font-title--lg text-white">
+                        {{ $bannerDetails->title ?? 'Unlock Knowledge Anywhere, Anytime with Experts.' }}
+                    </h1>
+                    <p class="font-title--sm text-white">
+                        {{ $bannerDetails->description ?? 'Our commitment is to guide you to the finest online courses, offering expert insights whenever and wherever you are.' }}
+                    </p>
+                </div>
+            </div>
+            {{-- <div class="col-lg-5 order-1 order-lg-0">
+                <div class="main-banner-end">
+                    <img src="{{ $bannerDetails ? asset('public/uploads/banners/' . @$bannerDetails->image) : asset('path/to/default/banner.jpg') }}"
+                         alt="banner image"
+                         class="img-fluid"
+                         width="515"
+                         height="700"/>
+                </div>
+            </div> --}}
         </div>
     </div>
 </section>

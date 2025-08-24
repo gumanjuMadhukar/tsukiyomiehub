@@ -207,6 +207,11 @@
                             <span class="nav-text">Permissions</span>
                         </a>
                     </li>
+                    <li><a class="" href="{{route('banner.index')}}" aria-expanded="false">
+                            <i class="las la-cog"></i>
+                            <span class="nav-text">Banners</span>
+                        </a>
+                    </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-universal-access"></i>
                             <span class="nav-text">Roles</span>
@@ -379,18 +384,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <script>
-        @if(Session::has('success'))  
-    				toastr.success("{{ Session::get('success') }}");  
-    		@endif  
-    		@if(Session::has('info'))  
-    				toastr.info("{{ Session::get('info') }}");  
-    		@endif  
-    		@if(Session::has('warning'))  
-    				toastr.warning("{{ Session::get('warning') }}");  
-    		@endif  
-    		@if(Session::has('error'))  
-    				toastr.error("{{ Session::get('error') }}");  
-    		@endif  
+        @if(Session::has('success'))
+    				toastr.success("{{ Session::get('success') }}");
+    		@endif
+    		@if(Session::has('info'))
+    				toastr.info("{{ Session::get('info') }}");
+    		@endif
+    		@if(Session::has('warning'))
+    				toastr.warning("{{ Session::get('warning') }}");
+    		@endif
+    		@if(Session::has('error'))
+    				toastr.error("{{ Session::get('error') }}");
+    		@endif
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     {!! Toastr::message() !!}

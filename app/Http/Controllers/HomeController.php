@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Instructor;
@@ -12,6 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $course = Course::get();
+        $bannerDetails = Banner::where('status','1')->first();
         $instructor = Instructor::get();
         $category = CourseCategory::get();
         $popularCourses = Course::where('tag', 'popular')->get();
@@ -30,7 +32,7 @@ class HomeController extends Controller
 
         return view(
             'frontend.home',
-            compact('course', 'instructor', 'category', 'popularCourses', 'designCourses', 'developmentCourses', 'businessCourses', 'itCourses')
+            compact('bannerDetails','course', 'instructor', 'category', 'popularCourses', 'designCourses', 'developmentCourses', 'businessCourses', 'itCourses')
         );
     }
 }

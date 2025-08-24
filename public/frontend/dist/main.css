@@ -18381,11 +18381,12 @@ button:focus {
 
 header {
   position: relative;
-  background-color: #fff !important;
 }
 
 header .navbar {
-  padding: 0px;
+    padding: 0px;
+    background-color: #000 !important;
+
 }
 
 header .navbar-toggler {
@@ -18424,7 +18425,7 @@ header .navbar-nav .nav-item .nav-link {
   position: relative;
   font-size: 16px;
   line-height: 24px;
-  color: #42414b;
+  color: #b3b1c3;
   padding: 25px 0px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;

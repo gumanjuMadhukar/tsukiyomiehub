@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{ENV('APP_NAME')}} | @yield('title', 'Home')</title>
     <link rel="stylesheet" href="{{asset('public/frontend/dist/main.css')}}" />
-    <link rel="icon" type="image/png" href="{{asset('public/frontend/dist/images/favicon/favicon.png')}}" />
+    <link rel="icon" type="image/png" href="{{asset('public/frontend/dist/images/favicon/favicon-32x32.png')}}" />
     <link rel="stylesheet" href="{{asset('public/frontend/fontawesome-free-5.15.4-web/css/all.min.css')}}">
     <style>
         .dropdown {
@@ -50,7 +50,7 @@
 
     <!-- Header Starts Here -->
     <header @yield('header-attr')>
-        <nav class="navbar navbar-expand-xl navbar-light bg-transparent">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-transparent">
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="{{route('home')}}">
@@ -510,7 +510,7 @@
             event.preventDefault();
             var dropdown = document.getElementById('imageDropdown');
             dropdown.classList.toggle('active');
-    
+
             // Close the dropdown when clicking somewhere else on the page
             document.body.addEventListener('click', function (e) {
                 if (!dropdown.contains(e.target)) {
@@ -524,18 +524,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <script>
-        @if(Session::has('success'))  
-        				toastr.success("{{ Session::get('success') }}");  
-        		@endif  
-        		@if(Session::has('info'))  
-        				toastr.info("{{ Session::get('info') }}");  
-        		@endif  
-        		@if(Session::has('warning'))  
-        				toastr.warning("{{ Session::get('warning') }}");  
-        		@endif  
-        		@if(Session::has('error'))  
-        				toastr.error("{{ Session::get('error') }}");  
-        		@endif  
+        @if(Session::has('success'))
+        				toastr.success("{{ Session::get('success') }}");
+        		@endif
+        		@if(Session::has('info'))
+        				toastr.info("{{ Session::get('info') }}");
+        		@endif
+        		@if(Session::has('warning'))
+        				toastr.warning("{{ Session::get('warning') }}");
+        		@endif
+        		@if(Session::has('error'))
+        				toastr.error("{{ Session::get('error') }}");
+        		@endif
     </script>
 
     @stack('scripts')
